@@ -12,8 +12,8 @@ The source code contains:<br />
 ◦ Another function in addition to the main function.<br />
 <br />
 * The second executable is named `Grace`.
-• When executed, the program writes in a file named `Grace_kid.c`/`Grace_kid.s` the source code of the file used to compile the program.<br />
-• The source code contains<br />
+- When executed, the program writes in a file named `Grace_kid.c`/`Grace_kid.s` the source code of the file used to compile the program.<br />
+- The source code contains<br />
 ◦ No main declared.<br />
 ◦ Three defines.<br />
 ◦ One comment.<br />
