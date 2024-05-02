@@ -1,13 +1,18 @@
-CC			= clang
-CFLAGS		= -Wall -Wextra
+QUINE1	= Colleen
+QUINE2	= Grace
 
-colleen:
-	cd Colleen \
-	&& $(CC) $(CFLAGs) Colleen.c -o Colleen \
-	&& ./Colleen > tmp_Colleen \
-	&& (diff tmp_Colleen Colleen.c > diff.log || true) \
-	&& echo "\n\n\033[33mPrinting the diff...\033[0m\n" \
-	&& cat diff.log
+.PHONY: all clean fclean re
+
+all: $(QUINE1)
+
+$(QUINE1):
+	$(MAKE) -C $(QUINE1)
 
 clean:
-	cd Colleen && rm -rf Colleen tmp_Colleen diff.log
+	$(MAKE) -C $(QUINE1) clean
+	
+fclean:
+	$(MAKE) -C $(QUINE1) fclean
+
+re:
+	$(MAKE) -C $(QUINE1) re
