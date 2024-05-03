@@ -1,12 +1,13 @@
-NAME		= Colleen
+
+NAME		= Grace
 CC			= cc
 CFLAGS		= -Wall -Wextra
 
-TMP			= tmp_$(NAME)
+TMP			= Grace_kid.c
 LOG			= diff.log
 SRC			= $(NAME).c
 
-.PHONY: all clean fclean re
+PHONY: all clean fclean re
 
 all: $(NAME) test
 
