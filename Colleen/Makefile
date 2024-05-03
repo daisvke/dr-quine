@@ -1,5 +1,5 @@
 NAME		= Colleen
-CC			= cc
+CC			= clang
 CFLAGS		= -Wall -Wextra
 
 TMP			= tmp_$(NAME)

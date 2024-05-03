@@ -1,6 +1,6 @@
 
 NAME		= Grace
-CC			= cc
+CC			= clang
 CFLAGS		= -Wall -Wextra
 
 TMP			= Grace_kid.c
@@ -15,8 +15,8 @@ $(NAME):
 	$(CC) $(CFLAGs) $(SRC) -o $(NAME)
 
 test:
-	./$(NAME) > $(TMP)
-	(diff $(TMP) $(SRC) > $(LOG) || true)
+	./$(NAME)
+	(diff $(SRC) $(TMP) > $(LOG) || true)
 	echo "\n\n\033[33mPrinting the diff...\033[0m\n"
 	cat $(LOG)
 
