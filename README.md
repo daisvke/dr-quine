@@ -17,3 +17,21 @@ The source code contains:<br />
 ◦ No main declared.<br />
 ◦ Three defines.<br />
 ◦ One comment.<br />
+
+## Notes
+* printf in ASM:
+When not using floating point registers, RAX needs to be zeroed out before printf is called, otherwise it will segfault.
+
+## Useful commands
+```
+// To stop vim from adding a newline at end of file,
+// add these two lines in .vimrc
+:set nofixeol
+:set nofixendofline
+
+// Remove new line character at the end of a file
+vim -b <file>
+// once in vim:
+:set noeol
+:wq
+```
