@@ -1,5 +1,8 @@
 # Tmp files
 .*.sw?
+*.log
+tmp*
+*kid.*
 
 # Prerequisites
 *.d
