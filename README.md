@@ -20,7 +20,7 @@ The source code contains:<br />
 
 ## Notes
 * printf in ASM:
-When not using floating point registers, RAX needs to be zeroed out before printf is called, otherwise it will segfault.
+When not using floating point registers, al needs to be zeroed out before printf is called, otherwise it will segfault.
 
 ## Useful commands
 ```
