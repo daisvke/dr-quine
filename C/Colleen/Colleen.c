@@ -2,12 +2,12 @@
 
 // This is a quine
 char	*gets() {
-	return "#include <stdio.h>%c%c// This is a quine%cchar	*gets() {%c	return %c%s%c;%c}%c%cint main() {%c	// The output will be the same as the code%c	char *s = gets();%c	printf(s, 10, 10, 10, 10, 34, s, 34, 10, 10, 10, 10, 10, 10, 10, 10, 10);%c	return 0;%c}%c";
+	return "#include <stdio.h>%2$c%2$c// This is a quine%2$cchar	*gets() {%2$c	return %3$c%1$s%3$c;%2$c}%2$c%2$cint main() {%2$c	// The output will be the same as the code%2$c	char *s = gets();%2$c	printf(s, s, 10, 34);%2$c	return 0;%2$c}";
 }
 
 int main() {
 	// The output will be the same as the code
 	char *s = gets();
-	printf(s, 10, 10, 10, 10, 34, s, 34, 10, 10, 10, 10, 10, 10, 10, 10, 10);
+	printf(s, s, 10, 34);
 	return 0;
 }
