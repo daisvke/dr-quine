@@ -16,7 +16,7 @@ test: $(NAME)
 	diff $(SRC) $(NAME)_4.c || true # To avoid error 1
 
 clean:
-	rm -f $(NAME)_*.c
+	rm -f $(NAME)_*
 
 fclean: clean
 	rm -f $(NAME)
