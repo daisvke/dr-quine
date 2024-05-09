@@ -4,12 +4,12 @@ CFLAGS		= -Wall -Wextra
 
 SRC			= $(NAME).c
 
-PHONY: all clean fclean re
+.PHONY: all test clean fclean re
 
 all: $(NAME)
 
 $(NAME):
-	$(CC) $(CFLAGs) $(SRC) -o $(NAME)
+	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
 test: $(NAME)
 	./$(NAME)
