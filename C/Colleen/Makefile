@@ -9,7 +9,7 @@ OBJ			= $(NAME).o
 
 .PHONY: all clean fclean re
 
-all: $(NAME) test
+all: $(NAME)
 
 $(NAME):
 	$(CC) $(CFLAGS) $(SRC) -o $@

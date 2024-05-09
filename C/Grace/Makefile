@@ -6,12 +6,12 @@ TMP			= Grace_kid.c
 LOG			= diff.log
 SRC			= $(NAME).c
 
-PHONY: all clean fclean re
+.PHONY: all clean fclean re
 
-all: $(NAME) test
+all: $(NAME)
 
 $(NAME):
-	$(CC) $(CFLAGs) $(SRC) -o $(NAME)
+	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
 test:
 	./$(NAME)
