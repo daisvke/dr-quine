@@ -10,7 +10,7 @@ SRC			= $(NAME).c
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
 test:

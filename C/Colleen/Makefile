@@ -11,7 +11,7 @@ OBJ			= $(NAME).o
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $@
 
 test:
