@@ -14,10 +14,10 @@ $(NAME): $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
 test:
-	./$(NAME)
+	valgrind --track-fds=yes ./$(NAME)
 	(diff $(SRC) $(TMP) > $(LOG) || true)
-	echo "\n\n\033[33mPrinting the diff...\033[0m\n"
-	cat $(LOG)
+	@echo "\n\033[33mPrinting the diff...\033[0m\n"
+	@cat $(LOG)
 
 clean:
 	rm -f $(TMP) $(LOG)

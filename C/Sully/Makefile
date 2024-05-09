@@ -12,7 +12,7 @@ $(NAME): $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
 test: $(NAME)
-	./$(NAME)
+	valgrind --track-fds=yes ./$(NAME)
 	diff $(SRC) $(NAME)_4.c || true # To avoid error 1
 
 clean:

@@ -17,8 +17,8 @@ $(NAME): $(SRC)
 test:
 	./$(NAME) > $(TMP)
 	diff $(TMP) $(SRC) > $(LOG) || true
-	echo "\n\n\033[33mPrinting the diff...\033[0m\n"
-	cat $(LOG)
+	@echo "\n\033[33mPrinting the diff...\033[0m\n"
+	@cat $(LOG)
 
 clean:
 	rm -f $(TMP) $(LOG) $(OBJ)

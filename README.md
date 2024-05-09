@@ -21,6 +21,13 @@ The source code contains:<br />
 ## Notes
 * printf in ASM:
 When not using floating point registers, al needs to be zeroed out before printf is called, otherwise it will segfault.
+* The first six integer or pointer arguments are passed in registers as follows:
+    - rdi: Used for the first integer or pointer argument.
+    - rsi: Used for the second integer or pointer argument.
+    - rdx: Used for the third integer or pointer argument.
+    - rcx: Used for the fourth integer or pointer argument.
+    - r8: Used for the fifth integer or pointer argument.
+    - r9: Used for the sixth integer or pointer argument.
 
 ## Useful commands
 ```
