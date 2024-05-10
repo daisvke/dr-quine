@@ -2,7 +2,9 @@ NAME	= Colleen
 SRC		= $(NAME).s
 OBJ		= $(NAME).o
 ASM		= nasm -f elf64
-CC		= ld --dynamic-linker /lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 -lc -g -e main
+# Specify the symbolic link to the actual dynamic linker file
+# Specify that the entry point is the "main" function
+LD		= ld --dynamic-linker /lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 -lc -e main
 TMP		= tmp_$(NAME)
 LOG		= diff.log
 
@@ -12,7 +14,7 @@ all: $(NAME)
 
 $(NAME): $(SRC)
 	$(ASM) $(SRC) -o $(OBJ)
-	$(CC) $(OBJ) -o $@
+	$(LD) $(OBJ) -o $@
 
 test: $(NAME)
 	valgrind --track-fds=yes ./$(NAME) > $(TMP)
