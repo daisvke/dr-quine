@@ -5,7 +5,7 @@ section .rodata
 
 section .text
 extern printf
-extern exit
+extern  exit
 global main
 
 get_quine:
@@ -17,7 +17,7 @@ get_quine:
 	call printf
 	xor rax, rax
 	leave
-	ret
+	call exit
 
 main:
 	; Prologue

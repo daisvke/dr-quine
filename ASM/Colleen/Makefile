@@ -2,7 +2,7 @@ NAME	= Colleen
 SRC		= $(NAME).s
 OBJ		= $(NAME).o
 ASM		= nasm -f elf64
-CC		= clang -Wall -Wextra -Werror
+CC		= ld --dynamic-linker /lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 -lc -g -e main
 TMP		= tmp_$(NAME)
 LOG		= diff.log
 
