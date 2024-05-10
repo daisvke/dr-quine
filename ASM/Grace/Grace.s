@@ -13,7 +13,7 @@ section .text
 	extern fopen
 	extern fclose
 	extern exit
-	global main
+	global _start
 
 %macro MAIN 0x0
 main:
@@ -50,4 +50,5 @@ _exit:
 	call exit
 %endmacro
 
-MAIN
+_start:
+	MAIN
