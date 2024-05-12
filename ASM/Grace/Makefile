@@ -1,10 +1,10 @@
 NAME	= Grace
 SRC		= $(NAME).s
 OBJ		= $(NAME).o
-ASM		= nasm -f elf64
+ASM		= nasm -f elf64 -g
 # Specify the symbolic link to the actual dynamic linker file
 # Specify that the entry point is the "main" function
-LD		= ld --dynamic-linker /lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 -lc
+LD		= ld --dynamic-linker=/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 -no-pie -lc
 TMP		= $(NAME)_kid.s
 LOG		= diff.log
 

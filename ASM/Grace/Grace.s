@@ -9,7 +9,7 @@ section .rodata
 	mode: db "w", 0x0
 
 section .text
-	extern fprintf
+	extern dprintf
 	extern fopen
 	extern fclose
 	extern exit
@@ -21,8 +21,10 @@ main:
 	mov rbp, rsp
 
 	lea rdi, [rel filename]
-	lea rsi, [rel mode]
-	call fopen
+	mov rsi, 0101
+    mov rdx, 0666o
+	mov rax, 2
+	syscall
 	push rax
 
 	test rax, rax
@@ -35,19 +37,21 @@ main:
 	mov r8, 0x22
 	lea r9, [rel fmt]
 	xor al, al
-	call fprintf
+	call dprintf
 
 	pop rdi
-	call fclose
+	mov rax, 3
+	syscall
 
 	leave
+	mov rax, 60
 	xor edi, edi
-	call exit
+	syscall
 
 _exit:
 	leave
 	mov edi, 0x1
-	call exit
+	call exit wrt ..plt
 %endmacro
 
 _start:
