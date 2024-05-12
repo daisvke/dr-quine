@@ -24,5 +24,6 @@ main:
 
 	call get_quine
 	leave
+	mov rax, 60
 	xor edi, edi
-	call exit
+	syscall
