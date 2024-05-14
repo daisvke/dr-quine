@@ -1,4 +1,13 @@
-NAME	= Colleen
+# Check if the "db" variable is set
+ifdef db
+    # Check if the value of "db" is "text"
+    ifeq ($(filter text,$(db)),text)
+        NAME = Colleen_text
+    endif
+else
+    NAME = Colleen
+endif
+
 SRC		= $(NAME).s
 OBJ		= $(NAME).o
 ASM		= nasm -f elf64

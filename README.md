@@ -41,4 +41,11 @@ vim -b <file>
 // once in vim:
 :set noeol
 :wq
+
+// Find out the section where the string data is stored
+hexdump -C Colleen
+
+// View the details of the .text section of an ELF file
+objdump -h -j .text <ELF_file>
+
 ```
