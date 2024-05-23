@@ -36,7 +36,7 @@ section .text
 
 %macro FPRINT_FILECONTENT 0x1
 	mov rdi, rax
-	lea rsi, %1
+	mov rsi, %1
 	mov rdx, 0xa
 	mov rcx, 0x25
 	mov r8, 0x22
