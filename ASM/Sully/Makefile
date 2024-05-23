@@ -2,7 +2,8 @@ NAME	= Sully
 SRC		= $(NAME).s
 OBJ		= $(NAME).o
 ASM		= nasm -f elf64
-CC		= clang -Wall -Wextra -Werror
+# Specify the symbolic link to the actual dynamic linker file
+LD		= ld --dynamic-linker=/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 -lc
 TMP		= $(NAME)_kid.s
 LOG		= diff.log
 
@@ -12,7 +13,7 @@ all: $(NAME)
 
 $(NAME): $(SRC)
 	$(ASM) $(SRC) -o $(OBJ)
-	$(CC) $(OBJ) -o $@
+	$(LD) $(OBJ) -o $@
 
 test: $(NAME)
 	valgrind --track-fds=yes ./$(NAME)
