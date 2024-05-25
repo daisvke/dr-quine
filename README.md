@@ -29,6 +29,10 @@ When not using floating point registers, al needs to be zeroed out before printf
     - r8: Used for the fifth integer or pointer argument.
     - r9: Used for the sixth integer or pointer argument.
 
+* Combining the flags:
+	O_RDWR | O_CREAT | O_TRUNC = 02o | 0100o | 01000o = 01102o (octal)
+    O_RDWR (2) + O_CREAT (64) + O_TRUNC (512) = 578 (decimal)
+
 ## Useful commands
 ```
 // To stop vim from adding a newline at end of file,
