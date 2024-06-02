@@ -1,6 +1,6 @@
 NAME		= Sully
 CC			= clang
-CFLAGS		= -Wall -Wextra
+CFLAGS		= -Wall -Wextra -Werror
 
 SRC			= $(NAME).c
 TMP_DIR		= tmp
