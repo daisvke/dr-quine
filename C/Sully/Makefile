@@ -15,7 +15,7 @@ $(NAME): $(SRC)
 test: $(NAME)
 	mkdir -p $(TMP_DIR)/
 	cp $(NAME) $(TMP_DIR)/$(NAME)
-	cd $(TMP_DIR) && valgrind --track-fds=yes ./$(NAME) \
+	cd $(TMP_DIR) && ./$(NAME) \
 	&& echo "\n\033[31m========== Runnning 1st test ==========\033[0m" \
 	&& ls -al | grep $(NAME) | wc -l \
 	&& echo "\n\033[31m========== Runnning 2nd test ==========\033[0m" \

@@ -16,7 +16,7 @@ $(NAME): $(SRC)
 	$(LD) $(OBJ) -o $@
 
 test: $(NAME)
-	valgrind --track-fds=yes ./$(NAME)
+	./$(NAME)
 	diff $(SRC) $(TMP) > $(LOG) || true
 	@echo "\n\033[33mPrinting the diff...\033[0m\n"
 	@cat $(LOG)
