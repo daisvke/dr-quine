@@ -1,13 +1,4 @@
-# Check if the "db" variable is set
-ifdef db
-    # Check if the value of "db" is "text"
-    ifeq ($(filter text,$(db)),text)
-        NAME = Colleen_text
-    endif
-else
-    NAME = Colleen
-endif
-
+NAME = Colleen
 SRC		= $(NAME).s
 OBJ		= $(NAME).o
 ASM		= nasm -f elf64
@@ -26,7 +17,7 @@ $(NAME): $(SRC)
 	$(LD) $(OBJ) -o $@
 
 test: $(NAME)
-	valgrind --track-fds=yes ./$(NAME) > $(TMP)
+	./$(NAME) > $(TMP)
 	diff $(SRC) $(TMP) > $(LOG) || true
 	@echo "\n\033[33mPrinting the diff...\033[0m\n"
 	@cat $(LOG)
